@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema de las 8 reinas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Problema de las 8 reinas</h1>
+
+    <div class="main-wrapper">
+        <div class="controls">
+            <label>Imagen reina:</label>
+            <select id="queenStyle" aria-label="Imagen reina">
+                <option value="♛">Reina 1 (♛)</option>
+                <option value="👸">Reina 2 (👸)</option>
+                <option value="👑">Reina 3 (👑)</option>
+            </select>
+        
+            <br>Colores:
+            <br>Celda 1:
+            <input type="color" aria-label="celda color1" id="color1" value="#ffffff">
+            <br>Celda 2:
+            <input type="color" aria-label="celda color2" id="color2" value="#000000">
+
+            <br><button id="Reiniciar" onclick="reiniciarTablero()">Reiniciar</button>
+        </div>
+
+        <table id="tablero">
+            <tr>
+                <td onclick="cellClick(this,0,0)" onmouseover="cambiar(0, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,1)" onmouseover="cambiar(0, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,2)" onmouseover="cambiar(0, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,3)" onmouseover="cambiar(0, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,4)" onmouseover="cambiar(0, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,5)" onmouseover="cambiar(0, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,6)" onmouseover="cambiar(0, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,0,7)" onmouseover="cambiar(0, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,1,0)" onmouseover="cambiar(1, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,1)" onmouseover="cambiar(1, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,2)" onmouseover="cambiar(1, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,3)" onmouseover="cambiar(1, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,4)" onmouseover="cambiar(1, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,5)" onmouseover="cambiar(1, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,6)" onmouseover="cambiar(1, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,1,7)" onmouseover="cambiar(1, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,2,0)" onmouseover="cambiar(2, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,1)" onmouseover="cambiar(2, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,2)" onmouseover="cambiar(2, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,3)" onmouseover="cambiar(2, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,4)" onmouseover="cambiar(2, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,5)" onmouseover="cambiar(2, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,6)" onmouseover="cambiar(2, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,2,7)" onmouseover="cambiar(2, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,3,0)" onmouseover="cambiar(3, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,1)" onmouseover="cambiar(3, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,2)" onmouseover="cambiar(3, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,3)" onmouseover="cambiar(3, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,4)" onmouseover="cambiar(3, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,5)" onmouseover="cambiar(3, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,6)" onmouseover="cambiar(3, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,3,7)" onmouseover="cambiar(3, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,4,0)" onmouseover="cambiar(4, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,1)" onmouseover="cambiar(4, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,2)" onmouseover="cambiar(4, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,3)" onmouseover="cambiar(4, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,4)" onmouseover="cambiar(4, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,5)" onmouseover="cambiar(4, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,6)" onmouseover="cambiar(4, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,4,7)" onmouseover="cambiar(4, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,5,0)" onmouseover="cambiar(5, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,1)" onmouseover="cambiar(5, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,2)" onmouseover="cambiar(5, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,3)" onmouseover="cambiar(5, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,4)" onmouseover="cambiar(5, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,5)" onmouseover="cambiar(5, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,6)" onmouseover="cambiar(5, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,5,7)" onmouseover="cambiar(5, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,6,0)" onmouseover="cambiar(6, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,1)" onmouseover="cambiar(6, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,2)" onmouseover="cambiar(6, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,3)" onmouseover="cambiar(6, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,4)" onmouseover="cambiar(6, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,5)" onmouseover="cambiar(6, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,6)" onmouseover="cambiar(6, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,6,7)" onmouseover="cambiar(6, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+            <tr>
+                <td onclick="cellClick(this,7,0)" onmouseover="cambiar(7, 0);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,1)" onmouseover="cambiar(7, 1);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,2)" onmouseover="cambiar(7, 2);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,3)" onmouseover="cambiar(7, 3);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,4)" onmouseover="cambiar(7, 4);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,5)" onmouseover="cambiar(7, 5);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,6)" onmouseover="cambiar(7, 6);" onmouseleave="limpiar()"></td>
+                <td onclick="cellClick(this,7,7)" onmouseover="cambiar(7, 7);" onmouseleave="limpiar()"></td>
+            </tr>
+        </table>
+
+        <div class="solutions">
+            <button class="solBtn" data-sol="0">Solución 1</button>
+            <button class="solBtn" data-sol="1">Solución 2</button>
+            <button class="solBtn" data-sol="2">Solución 3</button>
+        </div>
+    </div>
+
+    <script src="./js/functions-ofuscado.js" defer></script>
+</body>
+</html>
